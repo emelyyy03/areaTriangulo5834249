@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:modelo="clr-namespace:areaTriangulo5834249"
+             x:Class="areaTriangulo5834249.MainPage">
+
+    <ContentPage.BindingContext>
+        <modelo:AreaModelo/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+            
+            <Label Text="Algoritmo que calcula la superficie de un triángulo" HorizontalTextAlignment="Center"/>
+            <Entry Text="{Binding Lado1}" Placeholder="Digite Lado 1 Del Triángulo" />
+            <Entry Text="{Binding Lado2}" Placeholder="Digite Lado 2 Del Triángulo" />
+            <Entry Text="{Binding Lado3}" Placeholder="Digite Lado 3 Del Triángulo" />
+            <Label Text="{Binding Area}" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding ActualizarDatosCommand}"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
